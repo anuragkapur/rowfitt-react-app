@@ -7,6 +7,13 @@ import Dashboard from './Dashboard';
 import LogNewWorkout from './LogNewWorkout'
 import ViewTrainingLog from './ViewTrainingLog'
 
+const LogSingleDistanceWorkout = () => (
+  <div>
+    <br></br><br></br><br></br><br></br>
+    <h2>Log Single Distance Workout</h2>
+  </div>
+);
+
 class NavBar extends React.Component {
   render() {
     return (
@@ -37,6 +44,7 @@ class NavBar extends React.Component {
           <Route exact path="/" component={Dashboard}/>
           <Route exact path="/log-new-workout" component={LogNewWorkout}/>
           <Route exact path="/view-training-log" component={ViewTrainingLog}/>
+          <Route exact path="/log-new-workout/single-distance-workout" component={LogSingleDistanceWorkout}/>
         </wrapper>
       </Router>
     );
