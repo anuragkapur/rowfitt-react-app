@@ -5,7 +5,7 @@ class ViewTrainingLog extends React.Component {
     return(
       <div>
         <br></br><br></br><br></br>
-        <h2>Log new workout</h2>
+        <h2>My Training Log</h2>
       </div>
     );
   }
