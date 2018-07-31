@@ -3,7 +3,6 @@ import {
   Link,
   Route
 } from 'react-router-dom';
-import LogSingleDistanceWorkout from "./LogSingleDistanceWorkout";
 
 class LogNewWorkout extends React.Component {
   render() {
@@ -21,7 +20,6 @@ class LogNewWorkout extends React.Component {
             <Link className="btn btn-primary btn-lg btn-block" to="/" role="button">Variable Time Intervals</Link>
           </div>
         </div>
-        <Route exact path="/log-new-workout/single-distance-workout" component={LogSingleDistanceWorkout}/>
       </main>
     );
   }

@@ -42,3 +42,13 @@ test("clicking on /view-training-log link displays ViewTrainingLog page", () => 
   fireEvent.click(getByText("View Training Log"), leftClick);
   expect(container.innerHTML).toMatch("My Training Log");
 });
+
+test("navigation from top nav to 'Log New Workout' link to 'Single Distance' link takes user to " +
+  "LogSingleDistanceWorkout page", () => {
+  const {getByText, container} = render(<Navigation/>);
+  const leftClick = {button: 0};
+  fireEvent.click(getByText("Log New Workout"), leftClick);
+  fireEvent.click(getByText("Single Distance"), leftClick);
+  expect(getByText("Log Single Distance Workout")).toBeInTheDocument();
+  expect(container.firstChild).toMatchSnapshot();
+});

@@ -9,3 +9,7 @@ export function renderWithRouter(component) {
     ...render(<Router>{component}</Router>)
   }
 }
+
+test("dummy test", () => {
+  //dummy test so that this file can live in the __tests__ directory
+});
