@@ -4,12 +4,12 @@ import './css/bootstrap.css';
 import './css/bootstrap-grid.css';
 import './css/bootstrap-reboot.css';
 import './css/rowfitt.css';
-import NavBar from './components/NavBar';
+import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
     return (
-      <NavBar/>
+      <Navigation/>
     );
   }
 }

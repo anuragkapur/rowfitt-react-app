@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from "../components/NavBar";
+import Navigation from "../components/Navigation";
 import {render, fireEvent, cleanup} from 'react-testing-library';
 import 'jest-dom/extend-expect';
 
@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 test("navigation elements - Dashboard, LogNewWorkout, ViewTrainingLogs are displayed", () => {
   const {getByText, container} = render(
-    <NavBar/>
+    <Navigation/>
   );
 
   expect(getByText("Dashboard")).toBeInTheDocument();
@@ -18,7 +18,7 @@ test("navigation elements - Dashboard, LogNewWorkout, ViewTrainingLogs are displ
 
 test("clicking on / link displays Dashboard page", () => {
   const {getByText, container} = render(
-    <NavBar/>
+    <Navigation/>
   );
   const leftClick = {button: 0};
   fireEvent.click(getByText("Dashboard"), leftClick);
@@ -27,7 +27,7 @@ test("clicking on / link displays Dashboard page", () => {
 
 test("clicking on /log-new-workout link displays LogNewWorkout page", () => {
   const {getByText, container} = render(
-    <NavBar/>
+    <Navigation/>
   );
   const leftClick = {button: 0};
   fireEvent.click(getByText("Log New Workout"), leftClick);
@@ -36,7 +36,7 @@ test("clicking on /log-new-workout link displays LogNewWorkout page", () => {
 
 test("clicking on /view-training-log link displays ViewTrainingLog page", () => {
   const {getByText, container} = render(
-    <NavBar/>
+    <Navigation/>
   );
   const leftClick = {button: 0};
   fireEvent.click(getByText("View Training Log"), leftClick);

@@ -7,15 +7,9 @@ import {
 import Dashboard from './Dashboard';
 import LogNewWorkout from './LogNewWorkout'
 import ViewTrainingLog from './ViewTrainingLog'
+import LogSingleDistanceWorkout from "./LogSingleDistanceWorkout";
 
-const LogSingleDistanceWorkout = () => (
-  <div>
-    <br></br><br></br><br></br><br></br>
-    <h2>Log Single Distance Workout</h2>
-  </div>
-);
-
-class NavBar extends React.Component {
+class Navigation extends React.Component {
   render() {
     return (
       <Router>
@@ -52,4 +46,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default Navigation;
