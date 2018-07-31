@@ -12,6 +12,8 @@ The fitness tracking app for rowers
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+[![Build Status](https://travis-ci.org/anuragkapur/rowfitt-react-app.svg?branch=master)](https://travis-ci.org/anuragkapur/rowfitt-react-app)
+
 ## Available Scripts
 
 In the project directory, you can run:
