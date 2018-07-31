@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogNewWorkout page renders buttons to log all workout types 1`] = `
+<main
+  role="main"
+  class="container rowfitt-body-main-below-navbar"
+>
+  <h1
+    class="jumbotron-heading"
+  >
+    Log a New Workout
+  </h1>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/log-new-workout/single-distance-workout"
+      >
+        Single Distance
+      </a>
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/"
+      >
+        Single Time
+      </a>
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/"
+      >
+        Fixed Distance Intervals
+      </a>
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/"
+      >
+        Fixed Time Intervals
+      </a>
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/"
+      >
+        Variable Distance Intervals
+      </a>
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
+        href="/"
+      >
+        Variable Time Intervals
+      </a>
+    </div>
+  </div>
+</main>
+`;

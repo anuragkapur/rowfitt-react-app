@@ -13,7 +13,7 @@ class Navigation extends React.Component {
   render() {
     return (
       <Router>
-        <wrapper>
+        <div>
           <header>
             <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
               <a className="navbar-brand" href="/">Rowfitt</a>
@@ -40,7 +40,7 @@ class Navigation extends React.Component {
           <Route exact path="/log-new-workout" component={LogNewWorkout}/>
           <Route exact path="/view-training-log" component={ViewTrainingLog}/>
           <Route exact path="/log-new-workout/single-distance-workout" component={LogSingleDistanceWorkout}/>
-        </wrapper>
+        </div>
       </Router>
     );
   }
