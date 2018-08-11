@@ -49,6 +49,5 @@ test("navigation from top nav to 'Log New Workout' link to 'Single Distance' lin
   const leftClick = {button: 0};
   fireEvent.click(getByText("Log New Workout"), leftClick);
   fireEvent.click(getByText("Single Distance"), leftClick);
-  expect(getByText("Log Single Distance Workout")).toBeInTheDocument();
-  expect(container.firstChild).toMatchSnapshot();
+  expect(getByText("Single Distance Workout")).toBeInTheDocument();
 });
