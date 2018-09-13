@@ -1,9 +1,12 @@
 import React from 'react';
 import {render, cleanup, fireEvent, waitForElement} from 'react-testing-library';
+import * as axios from "axios"
+import MockAxios from 'axios-mock-adapter';
 import 'jest-dom/extend-expect';
 import LogSingleDistanceWorkout from "../components/LogSingleDistanceWorkout";
 
 afterEach(cleanup);
+const mock = new MockAxios(axios, {delayResponse: Math.random() * 500});
 
 test(
   "When the user opens the 'Log Single Distance Workout' page; " +
@@ -44,25 +47,46 @@ test(
   "And hits the save button\n" +
   "Then the workout details should be saved for future use and the user should see a successful save message",
   async () => {
+    mockSaveWorkoutApiCall();
 
-    const {getByText, getByPlaceholderText, getByLabelText} = render(<LogSingleDistanceWorkout/>);
-
-    const date = getByPlaceholderText('dd/mm/yy'); fillFormField(date, '01/01/2018');
-    const timeHh = getByPlaceholderText('0'); fillFormField(timeHh, '0');
-    const timeMm = getByPlaceholderText('19'); fillFormField(timeMm, '19');
-    const timeSss = getByPlaceholderText('30.0'); fillFormField(timeSss, '30.0');
-    const splitMm = getByPlaceholderText('1'); fillFormField(splitMm, '1');
-    const splitSs = getByPlaceholderText('57.0'); fillFormField(splitSs, '57.0');
-    const strokeRate = getByPlaceholderText('22'); fillFormField(strokeRate, '22');
-    const heartRate = getByPlaceholderText('160'); fillFormField(heartRate, '160');
-
+    const {getByText, getByPlaceholderText} = render(<LogSingleDistanceWorkout/>);
+    fillForm(getByPlaceholderText);
     const leftClick = {button: 0};
     fireEvent.click(getByText("Save"), leftClick);
 
-    await waitForElement(() => getByLabelText('Workout saved successfully!'));
+    await waitForElement(() => getByText('Workout saved successfully!'));
 });
+
+function fillForm(getByPlaceholderText) {
+  const date = getByPlaceholderText('dd/mm/yy');
+  fillFormField(date, '01/01/2018');
+  const timeHh = getByPlaceholderText('0');
+  fillFormField(timeHh, '0');
+  const timeMm = getByPlaceholderText('19');
+  fillFormField(timeMm, '19');
+  const timeSss = getByPlaceholderText('30.0');
+  fillFormField(timeSss, '30.0');
+  const splitMm = getByPlaceholderText('1');
+  fillFormField(splitMm, '1');
+  const splitSs = getByPlaceholderText('57.0');
+  fillFormField(splitSs, '57.0');
+  const strokeRate = getByPlaceholderText('22');
+  fillFormField(strokeRate, '22');
+  const heartRate = getByPlaceholderText('160');
+  fillFormField(heartRate, '160');
+}
 
 function fillFormField(inputField, value) {
   inputField.value = value;
   fireEvent.change(inputField);
+}
+
+function mockSaveWorkoutApiCall() {
+  const expectedRequestBody = {
+    "date": "01/01/2018", "time-hh": "0", "time-mm": "19", "time-sss": "30.0", "split-mm": "1",
+    "split-sss": "57.0", "stroke-rate": "22", "hr": "160"
+  };
+  mock
+    .onPost("https://rowfitt-service.herokuapp.com/api/workout", expectedRequestBody)
+    .reply(200, {statusMessage: "Workout saved successfully!"});
 }

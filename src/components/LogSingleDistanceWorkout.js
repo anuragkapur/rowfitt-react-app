@@ -1,10 +1,16 @@
 import React from 'react';
+import axios from 'axios';
+
+const SAVE_WORKOUT_URL = "https://rowfitt-service.herokuapp.com/api/workout";
 
 class LogSingleDistanceWorkout extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      saving: false,
+      statusMessage: null,
+      workout: {}
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -16,20 +22,33 @@ class LogSingleDistanceWorkout extends React.Component {
     const value = target.value;
     const name = target.id;
 
-    this.setState({
-      [name]: value
-    });
+    this.setState(prevState =>
+      ({
+        workout: {
+          ...prevState.workout,
+          [name]: value
+        }
+      })
+    );
   }
 
   handleSubmit(event) {
-    alert('A form was submitted' + JSON.stringify(this.state));
+    console.log('Will save workout = ' + JSON.stringify(this.state.workout));
     event.preventDefault();
+    this.saveWorkout();
   }
+
+  saveWorkout = async () => {
+    this.setState({ saving: true });
+    const { data: { statusMessage }} = await axios.post(SAVE_WORKOUT_URL, this.state.workout);
+    this.setState({ saving: false, statusMessage: statusMessage });
+  };
 
   render() {
     return(
       <main role="main" className="container rowfitt-body-main-below-navbar">
         <h1 className="jumbotron-heading">Single Distance Workout</h1>
+        <h3>{this.state.statusMessage && this.state.statusMessage.toString()}</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group row">
             <div className="input-group col-sm-12">
