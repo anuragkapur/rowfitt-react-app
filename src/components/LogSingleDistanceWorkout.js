@@ -72,18 +72,18 @@ class LogSingleDistanceWorkout extends React.Component {
           </div>
           <div className="form-group row">
             <div className="input-group col-sm-12">
-              <label htmlFor="distance" className="col-sm-1 col-form-label">Time</label>
-              <input type="text" className="form-control" id="time-hh" placeholder="0"
+              <label htmlFor="timeHh" className="col-sm-1 col-form-label">Time</label>
+              <input type="text" className="form-control" id="timeHh" placeholder="0"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">hh</div>
               </div>
-              <input type="text" name="time-mm" className="form-control" id="time-mm" placeholder="19"
+              <input type="text" name="time-mm" className="form-control" id="timeMm" placeholder="19"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">mm</div>
               </div>
-              <input type="text" name="time-ss.s" className="form-control" id="time-sss" placeholder="30.0"
+              <input type="text" name="time-ss.s" className="form-control" id="timeSss" placeholder="30.0"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">ss.s</div>
@@ -92,13 +92,13 @@ class LogSingleDistanceWorkout extends React.Component {
           </div>
           <div className="form-group row">
             <div className="input-group col-sm-12">
-              <label htmlFor="distance" className="col-sm-1 col-form-label">Split</label>
-              <input type="text" name="split-mm" className="form-control" id="split-mm" placeholder="1"
+              <label htmlFor="splitMm" className="col-sm-1 col-form-label">Split</label>
+              <input type="text" name="split-mm" className="form-control" id="splitMm" placeholder="1"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">mm</div>
               </div>
-              <input type="text" name="split-ss" className="form-control" id="split-sss" placeholder="57.0"
+              <input type="text" name="split-ss" className="form-control" id="splitSss" placeholder="57.0"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">ss.s</div>
@@ -107,8 +107,8 @@ class LogSingleDistanceWorkout extends React.Component {
           </div>
           <div className="form-group row">
             <div className="input-group col-sm-12">
-              <label htmlFor="stroke-rate" className="col-sm-1 col-form-label">Stroke Rate</label>
-              <input type="text" className="form-control" id="stroke-rate" placeholder="22"
+              <label htmlFor="strokeRate" className="col-sm-1 col-form-label">Stroke Rate</label>
+              <input type="text" className="form-control" id="strokeRate" placeholder="22"
                      onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">spm</div>
@@ -117,8 +117,8 @@ class LogSingleDistanceWorkout extends React.Component {
           </div>
           <div className="form-group row">
             <div className="input-group col-sm-12">
-              <label htmlFor="hr" className="col-sm-1 col-form-label">Heart Rate</label>
-              <input type="text" className="form-control" id="hr" placeholder="160" onChange={this.handleInputChange}/>
+              <label htmlFor="heartRate" className="col-sm-1 col-form-label">Heart Rate</label>
+              <input type="text" className="form-control" id="heartRate" placeholder="160" onChange={this.handleInputChange}/>
               <div className="input-group-append">
                 <div className="input-group-text">bpm</div>
               </div>

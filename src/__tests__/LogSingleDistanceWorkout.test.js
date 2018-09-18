@@ -83,8 +83,8 @@ function fillFormField(inputField, value) {
 
 function mockSaveWorkoutApiCall() {
   const expectedRequestBody = {
-    "date": "01/01/2018", "time-hh": "0", "time-mm": "19", "time-sss": "30.0", "split-mm": "1",
-    "split-sss": "57.0", "stroke-rate": "22", "hr": "160"
+    "date": "01/01/2018", "timeHh": "0", "timeMm": "19", "timeSss": "30.0", "splitMm": "1",
+    "splitSss": "57.0", "strokeRate": "22", "heartRate": "160"
   };
   mock
     .onPost("https://rowfitt-service.herokuapp.com/api/workout", expectedRequestBody)
