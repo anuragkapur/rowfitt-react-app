@@ -88,5 +88,5 @@ function mockSaveWorkoutApiCall() {
   };
   mock
     .onPost("https://rowfitt-service.herokuapp.com/api/workout", expectedRequestBody)
-    .reply(200, {statusMessage: "Workout saved successfully!"});
+    .reply(201);
 }
