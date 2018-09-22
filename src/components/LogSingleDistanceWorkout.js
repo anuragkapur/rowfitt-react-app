@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const SAVE_WORKOUT_URL = "http://localhost:8080/api/workout";
+const SAVE_WORKOUT_URL = "https://rowfitt-service.herokuapp.com/api/workout";
 
 class LogSingleDistanceWorkout extends React.Component {
 
