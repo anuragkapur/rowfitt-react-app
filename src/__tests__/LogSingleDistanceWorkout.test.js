@@ -87,6 +87,6 @@ function mockSaveWorkoutApiCall() {
     "splitSss": "57.0", "strokeRate": "22", "heartRate": "160"
   };
   mock
-    .onPost("https://rowfitt-service.herokuapp.com/api/workout", expectedRequestBody)
+    .onPost(process.env.REACT_APP_SAVE_WORKOUT_URL, expectedRequestBody)
     .reply(201);
 }
