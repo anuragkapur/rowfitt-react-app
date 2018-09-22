@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const SAVE_WORKOUT_URL = "https://rowfitt-service.herokuapp.com/api/workout";
+const SAVE_WORKOUT_URL = "http://localhost:8080/api/workout";
 
 class LogSingleDistanceWorkout extends React.Component {
 
@@ -39,8 +39,13 @@ class LogSingleDistanceWorkout extends React.Component {
   }
 
   saveWorkout = async () => {
-    this.setState({ saving: true });
-    const { data: { statusMessage }} = await axios.post(SAVE_WORKOUT_URL, this.state.workout);
+    this.setState({ saving: true, statusMessage: "Saving..." });
+    const {status} = await axios.post(SAVE_WORKOUT_URL, this.state.workout);
+    var statusMessage = "Workout saved successfully!";
+    if (status !== 201) {
+      statusMessage = "Something went wrong, please try again!"
+    }
+    console.log(status);
     this.setState({ saving: false, statusMessage: statusMessage });
   };
 
