@@ -60,6 +60,8 @@ test(
 function fillForm(getByPlaceholderText) {
   const date = getByPlaceholderText('dd/mm/yy');
   fillFormField(date, '2018-01-01');
+  const distance = getByPlaceholderText('5000');
+  fillFormField(distance, '5000');
   const timeHh = getByPlaceholderText('0');
   fillFormField(timeHh, '0');
   const timeMm = getByPlaceholderText('19');
@@ -83,7 +85,7 @@ function fillFormField(inputField, value) {
 
 function mockSaveWorkoutApiCall() {
   const expectedRequestBody = {
-    "date": "2018-01-01", "timeHh": "0", "timeMm": "19", "timeSss": "30.0", "splitMm": "1",
+    "date": "2018-01-01", "distance": "5000", "timeHh": "0", "timeMm": "19", "timeSss": "30.0", "splitMm": "1",
     "splitSss": "57.0", "strokeRate": "22", "heartRate": "160"
   };
   mock
