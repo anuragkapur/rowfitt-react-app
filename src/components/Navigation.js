@@ -8,6 +8,7 @@ import Dashboard from './Dashboard';
 import LogNewWorkout from './LogNewWorkout'
 import ViewTrainingLog from './ViewTrainingLog'
 import LogSingleDistanceWorkout from "./LogSingleDistanceWorkout";
+import UploadWorkoutImage from "./UploadWorkoutImage";
 
 class Navigation extends React.Component {
   render() {
@@ -40,6 +41,7 @@ class Navigation extends React.Component {
           <Route exact path="/log-new-workout" component={LogNewWorkout}/>
           <Route exact path="/view-training-log" component={ViewTrainingLog}/>
           <Route exact path="/log-new-workout/single-distance-workout" component={LogSingleDistanceWorkout}/>
+          <Route exact path="/log-new-workout/upload-image" component={UploadWorkoutImage}/>
         </div>
       </Router>
     );

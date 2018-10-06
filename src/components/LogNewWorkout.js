@@ -10,6 +10,13 @@ class LogNewWorkout extends React.Component {
         <h1 className="jumbotron-heading">Log a New Workout</h1>
         <div className="row">
           <div className="col">
+            <Link className="btn btn-primary btn-lg btn-block" to="/log-new-workout/upload-image"
+                  role="button">Upload Image</Link>
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <div className="col">
             <Link className="btn btn-primary btn-lg btn-block" to="/log-new-workout/single-distance-workout"
                   role="button">Single Distance</Link>
             <Link className="btn btn-primary btn-lg btn-block" to="/" role="button">Single Time</Link>

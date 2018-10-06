@@ -19,6 +19,22 @@ exports[`LogNewWorkout page renders buttons to log all workout types 1`] = `
       <a
         class="btn btn-primary btn-lg btn-block"
         role="button"
+        href="/log-new-workout/upload-image"
+      >
+        Upload Image
+      </a>
+    </div>
+  </div>
+  <hr />
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <a
+        class="btn btn-primary btn-lg btn-block"
+        role="button"
         href="/log-new-workout/single-distance-workout"
       >
         Single Distance
