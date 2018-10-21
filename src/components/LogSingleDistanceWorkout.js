@@ -38,7 +38,15 @@ class LogSingleDistanceWorkout extends React.Component {
 
   saveWorkout = async () => {
     this.setState({ saving: true, statusMessage: "Saving..." });
-    const {status} = await axios.post(process.env.REACT_APP_SAVE_WORKOUT_URL, this.state.workout);
+    const {status} = await axios.post(
+      process.env.REACT_APP_SAVE_WORKOUT_URL,
+      this.state.workout,
+      {
+        headers: {
+          'Authorization': "Bearer " + localStorage.getItem('access_token')
+        }
+      }
+    );
     var statusMessage = "Workout saved successfully!";
     if (status !== 201) {
       statusMessage = "Something went wrong, please try again!"

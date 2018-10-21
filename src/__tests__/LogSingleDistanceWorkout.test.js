@@ -88,7 +88,15 @@ function mockSaveWorkoutApiCall() {
     "date": "2018-01-01", "distance": "5000", "timeHh": "0", "timeMm": "19", "timeSss": "30.0", "splitMm": "1",
     "splitSss": "57.0", "strokeRate": "22", "heartRate": "160"
   };
+  var headers = {
+    'Authorization': "Bearer " + ""/*localStorage.getItem('access_token')*/
+  };
   mock
     .onPost(process.env.REACT_APP_SAVE_WORKOUT_URL, expectedRequestBody)
-    .reply(201);
+    .reply(function(config) {
+      if (config.headers.Authorization)
+        return [201, {}];
+      else
+        return [401, {}];
+    });
 }

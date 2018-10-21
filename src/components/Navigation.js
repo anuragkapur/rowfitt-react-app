@@ -9,9 +9,23 @@ import LogNewWorkout from './LogNewWorkout'
 import ViewTrainingLog from './ViewTrainingLog'
 import LogSingleDistanceWorkout from "./LogSingleDistanceWorkout";
 import UploadWorkoutImage from "./UploadWorkoutImage";
+import Auth from '../auth/Auth';
+
+const auth = new Auth();
 
 class Navigation extends React.Component {
+
+  login() {
+    auth.login();
+  }
+
+  logout() {
+    auth.logout();
+  }
+
   render() {
+    const { isAuthenticated } = auth;
+
     return (
       <Router>
         <div>
@@ -24,14 +38,22 @@ class Navigation extends React.Component {
               </button>
               <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">
-                    <Link className="nav-link" to="/">Dashboard <span className="sr-only">(current)</span></Link>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">Dashboard</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/log-new-workout">Log New Workout</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/view-training-log">View Training Log</Link>
+                  </li>
+                  <li className="nav-item-active">
+                    {
+                      !isAuthenticated() && (<Link className="nav-link" to="#" onClick={this.login.bind(this)}>Login</Link>)
+                    }
+                    {
+                      isAuthenticated() && (<Link className="nav-link" to="#" onClick={this.logout.bind(this)}>Logout</Link>)
+                    }
                   </li>
                 </ul>
               </div>
